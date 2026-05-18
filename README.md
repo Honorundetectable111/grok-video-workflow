@@ -140,13 +140,7 @@ Codex can run local tools and can be extended through scripts, skills, and MCP s
 ## Author
 
 Created by [Rion-Wu-tech](https://github.com/Rion-Wu-tech).
-
-## Acknowledgements
-
-- [Hermes Agent](https://github.com/Hermes-AGI) - powerful AI agent framework inspiration
-- [TechCrunch](https://techcrunch.com/) - AI and technology news source
-- [CoinDesk](https://www.coindesk.com/) - crypto news source
-- [GitHub Trending](https://github.com/trending) - discovery of high-quality open-source projects
+X/Twitter: [@rionaifantasy]
 
 ## Safety
 
